@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  @IBOutlet weak var remainingBudget: UILabel!
+  @IBOutlet weak var budgetTextField: UITextField!
 
   @IBOutlet weak var tableView: UITableView!
   var spendList: SpendList
@@ -23,10 +25,25 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     self.tableView.delegate = self
     self.tableView.dataSource = self
-    print(spendList.items.count)
   }
   
 
+  @IBAction func calculateBudget(_ sender: Any) {
+    let spendValues = spendList.items.map({(spend) -> Double in
+      return spend.value
+    })
+    let totalSpent = spendValues.reduce(0){ (total, value) -> Double in
+      return total + value
+    }
+    
+    if let text = budgetTextField.text, !text.isEmpty {
+      remainingBudget.text = String(Double(text)! - totalSpent)
+    } else {
+      remainingBudget.text = ""
+    }
+  }
+  
+  
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -45,9 +62,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   func configureText(for cell:UITableViewCell, with item: SpendItem){
     if let spendItemCell = cell as? SpendItemTableViewCell {
       spendItemCell.spendDescriptionText.text = item.description
-      spendItemCell.spendValueText.text = "£\(item.value)"
+      spendItemCell.spendValueText.text = "£" + String(format: "%.2f", item.value)
     }
+  }
+}
+
+extension ViewController: UITextFieldDelegate {
+  
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+    return string.rangeOfCharacter(from: invalidCharacters) == nil
   }
   
 }
-
