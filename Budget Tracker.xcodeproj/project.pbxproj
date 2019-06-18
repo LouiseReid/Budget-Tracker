@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7627BE22B8E69600D919CE /* SpendItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7627BD22B8E69600D919CE /* SpendItemTableViewCell.swift */; };
 		CE84D6BE22B8D70900780F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84D6BD22B8D70900780F81 /* AppDelegate.swift */; };
 		CE84D6C022B8D70900780F81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84D6BF22B8D70900780F81 /* ViewController.swift */; };
 		CE84D6C322B8D70900780F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84D6C122B8D70900780F81 /* Main.storyboard */; };
 		CE84D6C522B8D70C00780F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE84D6C422B8D70C00780F81 /* Assets.xcassets */; };
 		CE84D6C822B8D70C00780F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84D6C622B8D70C00780F81 /* LaunchScreen.storyboard */; };
+		CE84D6D122B8DBA300780F81 /* SpendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84D6D022B8DBA300780F81 /* SpendItem.swift */; };
+		CE84D6D322B8DC3800780F81 /* SpendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84D6D222B8DC3800780F81 /* SpendList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE7627BD22B8E69600D919CE /* SpendItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendItemTableViewCell.swift; sourceTree = "<group>"; };
 		CE84D6BA22B8D70900780F81 /* Budget Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE84D6BD22B8D70900780F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE84D6BF22B8D70900780F81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		CE84D6C422B8D70C00780F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE84D6C722B8D70C00780F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE84D6C922B8D70C00780F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE84D6D022B8DBA300780F81 /* SpendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendItem.swift; sourceTree = "<group>"; };
+		CE84D6D222B8DC3800780F81 /* SpendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		CE84D6BC22B8D70900780F81 /* Budget Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				CE84D6CF22B8DB7500780F81 /* Models */,
 				CE84D6BD22B8D70900780F81 /* AppDelegate.swift */,
 				CE84D6BF22B8D70900780F81 /* ViewController.swift */,
 				CE84D6C122B8D70900780F81 /* Main.storyboard */,
+				CE7627BD22B8E69600D919CE /* SpendItemTableViewCell.swift */,
 				CE84D6C422B8D70C00780F81 /* Assets.xcassets */,
 				CE84D6C622B8D70C00780F81 /* LaunchScreen.storyboard */,
 				CE84D6C922B8D70C00780F81 /* Info.plist */,
 			);
 			path = "Budget Tracker";
+			sourceTree = "<group>";
+		};
+		CE84D6CF22B8DB7500780F81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE84D6D022B8DBA300780F81 /* SpendItem.swift */,
+				CE84D6D222B8DC3800780F81 /* SpendList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE84D6D322B8DC3800780F81 /* SpendList.swift in Sources */,
 				CE84D6C022B8D70900780F81 /* ViewController.swift in Sources */,
 				CE84D6BE22B8D70900780F81 /* AppDelegate.swift in Sources */,
+				CE84D6D122B8DBA300780F81 /* SpendItem.swift in Sources */,
+				CE7627BE22B8E69600D919CE /* SpendItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
