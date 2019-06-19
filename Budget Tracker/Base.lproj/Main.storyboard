@@ -185,6 +185,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="6zY-WC-IoN" id="gOR-Jn-kaS"/>
+                        <outlet property="saveButton" destination="WcR-KA-s4g" id="E9s-Ae-AqI"/>
                         <outlet property="valueTextField" destination="uAd-TV-jTN" id="I68-OS-j2O"/>
                     </connections>
                 </viewController>
