@@ -161,7 +161,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-TV-jTN">
                                         <rect key="frame" x="114" y="91" width="227" height="30"/>
@@ -198,6 +198,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="container" destination="qBz-ag-7sj" id="cIA-Y7-kXE"/>
                         <outlet property="descriptionTextField" destination="6zY-WC-IoN" id="gOR-Jn-kaS"/>
                         <outlet property="saveButton" destination="WcR-KA-s4g" id="E9s-Ae-AqI"/>
                         <outlet property="valueTextField" destination="uAd-TV-jTN" id="I68-OS-j2O"/>

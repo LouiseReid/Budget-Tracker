@@ -22,9 +22,14 @@ class AddSpendViewController: UIViewController {
   @IBOutlet weak var descriptionTextField: UITextField!
   @IBOutlet weak var valueTextField: UITextField!
   @IBOutlet weak var saveButton: UIButton!
+  @IBOutlet weak var container: UIView!
   
   override func viewDidLoad() {
     saveButton.isEnabled = false
+    
+    container.layer.borderWidth = 1
+    container.layer.borderColor = #colorLiteral(red: 0.6872683167, green: 0.7037138343, blue: 0.4488055706, alpha: 1)
+    container.layer.cornerRadius = 8.0
   }
   
   @IBAction func cancel(_ sender: Any) {

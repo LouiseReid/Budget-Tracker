@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     self.tableView.dataSource = self
     calculateBudget()
     setBudgetBarColour()
+    
   }
   
   
