@@ -44,6 +44,14 @@ class ViewController: UIViewController {
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "AddSpendSegue" {
+      if let addSpendViewController = segue.destination as? AddSpendViewController {
+        addSpendViewController.delegate = self
+      }
+    }
+  }
+  
   
 }
 
@@ -78,9 +86,10 @@ extension ViewController: UITextFieldDelegate {
 }
 
 extension ViewController: AddSpendViewControllerDelegate {
-  func addSpendViewControllerDidCancel(_ controller: AddSpendViewController) {
+  func addSpendViewController(_ controller: AddSpendViewController, didFinishAdding item: SpendItem) {
     navigationController?.popViewController(animated: true)
   }
   
+
   
 }

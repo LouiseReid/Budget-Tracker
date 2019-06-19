@@ -76,7 +76,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="VEg-mt-BjJ" id="1sd-UV-kml"/>
                                 </connections>
@@ -103,7 +103,7 @@
                     <navigationItem key="navigationItem" id="Gop-AL-LzC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UvW-fa-LFN">
                             <connections>
-                                <segue destination="242-a8-ODW" kind="show" id="4UP-8b-0G0"/>
+                                <segue destination="242-a8-ODW" kind="show" identifier="AddSpendSegue" id="4UP-8b-0G0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -155,13 +155,19 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="242-a8-ODW" id="oND-Fq-eAi"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcR-KA-s4g">
                                         <rect key="frame" x="140" y="154" width="97" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="save:" destination="242-a8-ODW" eventType="touchUpInside" id="fQr-bJ-74K"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,6 +183,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="6zY-WC-IoN" id="gOR-Jn-kaS"/>
+                        <outlet property="valueTextField" destination="uAd-TV-jTN" id="I68-OS-j2O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBA-PB-riV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
