@@ -86,10 +86,18 @@ extension ViewController: UITextFieldDelegate {
 }
 
 extension ViewController: AddSpendViewControllerDelegate {
-  func addSpendViewController(_ controller: AddSpendViewController, didFinishAdding item: SpendItem) {
+  func addSpendViewControllerDidCancel(_ controller: AddSpendViewController) {
     navigationController?.popViewController(animated: true)
   }
   
-
+  func addSpendViewController(_ controller: AddSpendViewController, didFinishAdding item: SpendItem) {
+    navigationController?.popViewController(animated: true)
+    spendList.items.append(item)
+    let rowIndex = spendList.items.count - 1
+    let indexPath = IndexPath(row: rowIndex, section: 0)
+    tableView.insertRows(at: [indexPath], with: .automatic)
+  }
+  
+  
   
 }

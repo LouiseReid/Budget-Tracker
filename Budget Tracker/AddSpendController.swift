@@ -10,6 +10,8 @@ import UIKit
 
 protocol AddSpendViewControllerDelegate: class {
   
+  func addSpendViewControllerDidCancel(_ controller: AddSpendViewController)
+  
   func addSpendViewController(_ controller: AddSpendViewController, didFinishAdding item: SpendItem)
   
 }
@@ -21,7 +23,7 @@ class AddSpendViewController: UIViewController {
   @IBOutlet weak var valueTextField: UITextField!
   
   @IBAction func cancel(_ sender: Any) {
-    navigationController?.popViewController(animated: true)
+    delegate?.addSpendViewControllerDidCancel(self)
   }
   
   
