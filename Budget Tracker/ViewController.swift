@@ -27,8 +27,9 @@ class ViewController: UIViewController {
     self.tableView.dataSource = self
   }
   
-
+  
   @IBAction func calculateBudget(_ sender: Any) {
+    budgetTextField.resignFirstResponder()
     let spendValues = spendList.items.map({(spend) -> Double in
       return spend.value
     })
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     if let text = budgetTextField.text, !text.isEmpty {
-      remainingBudget.text = String(Double(text)! - totalSpent)
+      remainingBudget.text = "£" + String(format: "%.2f", Double(text)! - totalSpent)
     } else {
       remainingBudget.text = ""
     }
@@ -70,8 +71,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: UITextFieldDelegate {
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+    let invalidCharacters = CharacterSet(charactersIn: "0123456789.").inverted
     return string.rangeOfCharacter(from: invalidCharacters) == nil
   }
+  
+}
+
+extension ViewController: AddSpendViewControllerDelegate {
+  func addSpendViewControllerDidCancel(_ controller: AddSpendViewController) {
+    navigationController?.popViewController(animated: true)
+  }
+  
   
 }

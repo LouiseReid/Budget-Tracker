@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE7627BE22B8E69600D919CE /* SpendItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7627BD22B8E69600D919CE /* SpendItemTableViewCell.swift */; };
+		CE7627C022BA2E8E00D919CE /* AddSpendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7627BF22BA2E8E00D919CE /* AddSpendController.swift */; };
 		CE84D6BE22B8D70900780F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84D6BD22B8D70900780F81 /* AppDelegate.swift */; };
 		CE84D6C022B8D70900780F81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84D6BF22B8D70900780F81 /* ViewController.swift */; };
 		CE84D6C322B8D70900780F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84D6C122B8D70900780F81 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		CE7627BD22B8E69600D919CE /* SpendItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendItemTableViewCell.swift; sourceTree = "<group>"; };
+		CE7627BF22BA2E8E00D919CE /* AddSpendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendController.swift; sourceTree = "<group>"; };
 		CE84D6BA22B8D70900780F81 /* Budget Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE84D6BD22B8D70900780F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE84D6BF22B8D70900780F81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				CE84D6BD22B8D70900780F81 /* AppDelegate.swift */,
 				CE84D6BF22B8D70900780F81 /* ViewController.swift */,
 				CE84D6C122B8D70900780F81 /* Main.storyboard */,
+				CE7627BF22BA2E8E00D919CE /* AddSpendController.swift */,
 				CE7627BD22B8E69600D919CE /* SpendItemTableViewCell.swift */,
 				CE84D6C422B8D70C00780F81 /* Assets.xcassets */,
 				CE84D6C622B8D70C00780F81 /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			files = (
 				CE84D6D322B8DC3800780F81 /* SpendList.swift in Sources */,
 				CE84D6C022B8D70900780F81 /* ViewController.swift in Sources */,
+				CE7627C022BA2E8E00D919CE /* AddSpendController.swift in Sources */,
 				CE84D6BE22B8D70900780F81 /* AppDelegate.swift in Sources */,
 				CE84D6D122B8DBA300780F81 /* SpendItem.swift in Sources */,
 				CE7627BE22B8E69600D919CE /* SpendItemTableViewCell.swift in Sources */,
