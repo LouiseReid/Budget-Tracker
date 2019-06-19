@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  
+  @IBOutlet weak var budgetBar: UIView!
   @IBOutlet weak var remainingBudget: UILabel!
   @IBOutlet weak var budgetTextField: UITextField!
-
   @IBOutlet weak var tableView: UITableView!
   var spendList: SpendList
   
@@ -26,8 +27,9 @@ class ViewController: UIViewController {
     self.tableView.delegate = self
     self.tableView.dataSource = self
     calculateBudget()
-    
+    setBudgetBarColour()
   }
+  
   
   func calculateBudget(){
         let spendValues = spendList.items.map({(spend) -> Double in
@@ -44,10 +46,25 @@ class ViewController: UIViewController {
         }
   }
   
-  
   @IBAction func calculateBudget(_ sender: Any) {
     budgetTextField.resignFirstResponder()
     calculateBudget()
+    setBudgetBarColour()
+  }
+  
+  func setBudgetBarColour(){
+    let remainingBudgetValueString = remainingBudget.text!.dropFirst()
+    let remainingBudgetValue = Double(remainingBudgetValueString)!
+    let startingBudget = Double(budgetTextField.text!)!
+
+    if(remainingBudgetValue >= 0.5 * startingBudget){
+      budgetBar.backgroundColor = #colorLiteral(red: 0, green: 0.7919363976, blue: 0.3310733438, alpha: 1)
+    } else if remainingBudgetValue >= 0.25 * startingBudget{
+      budgetBar.backgroundColor = #colorLiteral(red: 1, green: 0.6082507968, blue: 0.08269272, alpha: 1)
+      
+    } else {
+      budgetBar.backgroundColor = #colorLiteral(red: 1, green: 0.2609461844, blue: 0.2748423517, alpha: 1)
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,6 +104,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     spendList.remove(item, at: indexPath.row)
     tableView.deleteRows(at: [indexPath], with: .automatic)
     calculateBudget()
+    setBudgetBarColour()
   }
 }
 
@@ -111,6 +129,7 @@ extension ViewController: AddSpendViewControllerDelegate {
     let indexPath = IndexPath(row: rowIndex, section: 0)
     tableView.insertRows(at: [indexPath], with: .automatic)
     calculateBudget()
+    setBudgetBarColour()
   }
   
 }
