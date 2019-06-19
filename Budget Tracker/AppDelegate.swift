@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ]
     
     UINavigationBar.appearance().titleTextAttributes = attrs
-    
     return true
   }
 
