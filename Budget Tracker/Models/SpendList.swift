@@ -40,4 +40,8 @@ class SpendList {
     items.append(row3Spend)
     items.append(row4Spend)
   }
+  
+  func remove(_ item: SpendItem, at index: Int) {
+    items.remove(at: index)
+  }
 }

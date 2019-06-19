@@ -81,6 +81,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
       spendItemCell.spendValueText.text = "£" + String(format: "%.2f", item.value)
     }
   }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    let item = spendList.items[indexPath.row]
+    spendList.remove(item, at: indexPath.row)
+    tableView.deleteRows(at: [indexPath], with: .automatic)
+    calculateBudget()
+  }
 }
 
 extension ViewController: UITextFieldDelegate {
