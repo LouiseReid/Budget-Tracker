@@ -25,23 +25,29 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     self.tableView.delegate = self
     self.tableView.dataSource = self
+    calculateBudget()
+    
+  }
+  
+  func calculateBudget(){
+        let spendValues = spendList.items.map({(spend) -> Double in
+          return spend.value
+        })
+        let totalSpent = spendValues.reduce(0){ (total, value) -> Double in
+          return total + value
+        }
+    
+        if let text = budgetTextField.text, !text.isEmpty {
+          remainingBudget.text = "£" + String(format: "%.2f", Double(text)! - totalSpent)
+        } else {
+          remainingBudget.text = ""
+        }
   }
   
   
   @IBAction func calculateBudget(_ sender: Any) {
     budgetTextField.resignFirstResponder()
-    let spendValues = spendList.items.map({(spend) -> Double in
-      return spend.value
-    })
-    let totalSpent = spendValues.reduce(0){ (total, value) -> Double in
-      return total + value
-    }
-    
-    if let text = budgetTextField.text, !text.isEmpty {
-      remainingBudget.text = "£" + String(format: "%.2f", Double(text)! - totalSpent)
-    } else {
-      remainingBudget.text = ""
-    }
+    calculateBudget()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,6 +58,7 @@ class ViewController: UIViewController {
     }
   }
   
+    
   
 }
 
@@ -96,8 +103,8 @@ extension ViewController: AddSpendViewControllerDelegate {
     let rowIndex = spendList.items.count - 1
     let indexPath = IndexPath(row: rowIndex, section: 0)
     tableView.insertRows(at: [indexPath], with: .automatic)
+    calculateBudget()
   }
   
-  
-  
 }
+
